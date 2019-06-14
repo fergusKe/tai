@@ -1,0 +1,261 @@
+@charset "UTF-8";
+.content {
+  zoom: 1; }
+  .content:before {
+    content: "";
+    display: table; }
+  .content:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.content p, .content .me_text .mail {
+  word-wrap: break-word;
+  word-break: break-all; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: "微軟正黑體"; }
+
+img {
+  display: block; }
+
+.wrapper {
+  width: 100%;
+  height: 100%; }
+
+nav {
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+  nav a {
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border-radius: 10px; }
+    nav a.active {
+      background-color: #71dbb2; }
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #222; }
+
+h1 {
+  color: #71dbb2;
+  text-align: center;
+  font-weight: bolder; }
+
+.bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #FDFDFD; }
+  .bg .slogan {
+    background-color: rgba(0, 0, 0, 0.69); }
+  .bg ~ .bg h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    max-width: 800px;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); }
+
+.greet {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
+  .greet .logo {
+    display: block;
+    width: 60px;
+    margin: 0 auto; }
+    .greet .logo img {
+      width: 100%; }
+  .greet h1 {
+    margin: 0; }
+
+.content {
+  width: 100%;
+  background-color: #333;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .content > div {
+    opacity: 0;
+    -webkit-transition: 1.5s;
+    -o-transition: 1.5s;
+    transition: 1.5s; }
+  .content.show > div {
+    opacity: 1; }
+  .content p {
+    color: rgba(255, 255, 255, 0.69); }
+  .content .me_pic {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 2% 0 20px;
+    overflow: hidden; }
+    .content .me_pic img {
+      height: 100%; }
+  .content .me_text {
+    float: left;
+    width: 60%;
+    margin: 2% 5% 20px 3%;
+    line-height: 30px;
+    list-style: none;
+    padding: 0;
+    color: #fff; }
+    .content .me_text li {
+      width: 100%; }
+      .content .me_text li i {
+        width: 50px;
+        text-align: center;
+        color: #71dbb2; }
+    .content .me_text .phone span {
+      letter-spacing: 1px; }
+  .content .biography {
+    clear: both;
+    -webkit-box-shadow: 0 -4px 0 -3px #71dbb2;
+    box-shadow: 0 -4px 0 -3px #71dbb2;
+    padding: 16px 0;
+    color: rgba(255, 255, 255, 0.69); }
+    .content .biography p {
+      text-indent: 32px;
+      text-align: justify; }
+    .content .biography a {
+      color: #498f73; }
+  .content a {
+    color: #498f73;
+    text-decoration: none;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s; }
+    .content a:hover {
+      color: #51a081; }
+  .content .web {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    font-size: 0; }
+    .content .web li {
+      display: inline-block;
+      width: 24%;
+      margin: 10px 0.5%;
+      -webkit-box-shadow: 0 0 0 1px #616775;
+      box-shadow: 0 0 0 1px #616775; }
+      .content .web li a {
+        position: relative;
+        display: block;
+        width: 100%;
+        background-color: #616775;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.69);
+        font-size: 16px; }
+        .content .web li a:hover img {
+          opacity: .8; }
+      .content .web li img {
+        width: 100%;
+        opacity: 1; }
+
+.content > div {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 0; }
+
+.timeline {
+  padding-top: 15px;
+  -webkit-box-shadow: 0 -4px 0 -3px #71dbb2;
+  box-shadow: 0 -4px 0 -3px #71dbb2;
+  clear: both; }
+  .timeline .company {
+    margin: 10px 0 20px;
+    color: #FFF;
+    font-size: 26px; }
+
+.timeline-item {
+  padding: 2em;
+  position: relative;
+  color: rgba(0, 0, 0, 0.7);
+  border-left: 2px solid rgba(0, 0, 0, 0.3); }
+  .timeline-item p {
+    font-size: 1rem;
+    text-align: justify; }
+  .timeline-item::before {
+    content: attr(date-is);
+    position: absolute;
+    left: 2em;
+    font-weight: bold;
+    top: 0;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #FFF; }
+  .timeline-item::after {
+    width: 10px;
+    height: 10px;
+    display: block;
+    top: 0;
+    position: absolute;
+    left: -7px;
+    border-radius: 10px;
+    content: '';
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: white; }
+  .timeline-item:last-child {
+    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0)) 1 100%;
+    -o-border-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0)) 1 100%;
+    border-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0))) 1 100%;
+    border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0)) 1 100%; }
+
+@media screen and (max-width: 992px) {
+  .content .me_pic {
+    width: 100%;
+    margin: 2% 0;
+    height: auto; }
+    .content .me_pic img {
+      width: 100%;
+      height: auto; }
+  .content .me_text {
+    width: 100%;
+    margin: 1% 0 14px; }
+    .content .me_text li {
+      width: 100%; }
+  .content .web li {
+    width: 32%;
+    margin: 10px 0.5%; } }
+
+@media screen and (max-width: 768px) {
+  .content .web li {
+    width: 49%;
+    margin: 10px 0.5%; } }
+
+@media screen and (max-width: 540px) {
+  .content .web li {
+    width: 100%;
+    margin: 10px 0%; } }

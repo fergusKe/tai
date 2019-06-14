@@ -1,0 +1,318 @@
+@import "variable";
+@import "extend";
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-size: 15px;
+	line-height: 1.5;
+	font-family: "微軟正黑體";
+}
+
+img {
+	display: block;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+nav {
+	position: fixed;
+	z-index: 99;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	a {
+		display: block;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background-color: rgba(255,255,255,.8);
+		width: 20px;
+		height: 20px;
+		margin: 10px;
+		border-radius: 10px;
+		// box-shadow: 0 0 0px 1px $main-color;
+		&.active {
+			background-color: $main-color;
+		}
+	}
+}
+
+main {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #222;
+}
+
+h1 {
+	color: $main-color;
+	text-align: center;
+	font-weight: bolder;
+}
+.bg {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-color: #FDFDFD;
+	.slogan {
+		background-color: rgba(0,0,0,.69);
+	}
+	&~.bg {
+		h1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 80%;
+			max-width: 800px;
+			transform: translateX(-50%) translateY(-50%);
+		}
+	}
+}
+
+.greet {
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	width: 100%;
+	transform: translateX(-50%);
+	.logo {
+		display: block;
+		width: 60px;
+		margin: 0 auto;
+		img {
+			width: 100%;
+		}
+	}
+	h1 {
+		margin: 0;
+	}
+}
+
+.content {
+	@extend %clearfix;
+	>div {
+		opacity: 0;
+		transition: 1.5s;
+	}
+	&.show {
+		>div {
+			opacity: 1;
+		}
+	}
+	p {
+		color:$p-color;
+		@extend %word-break;
+	}
+	width: 100%;
+	background-color: $card-color;
+	box-sizing: border-box;
+	.me_pic {
+		float: left;
+		width: 150px;
+		height: 150px;
+		margin: 2% 0 20px;
+		overflow: hidden;
+		img {
+			height: 100%;
+		}
+	}
+	.me_text {
+		float: left;
+		width: 60%;
+		margin: 2% 5% 20px 3%;
+		line-height: 30px;
+		list-style: none;
+		padding: 0;
+		color: #fff;
+		li {
+			width: 100%;
+			i {
+				width: 50px;
+				text-align: center;
+				color: $main-color;
+			}
+		}
+		.phone {
+			span {
+				letter-spacing: 1px;
+			}
+		}
+		.mail {
+			@extend %word-break;
+		}
+	}
+	.biography {
+		clear: both;
+		box-shadow: 0 -4px 0 -3px $main-color;
+		padding: 16px 0;
+		color: $p-color;
+		p {
+			text-indent: 32px;
+			text-align: justify;
+		}
+		a {
+			color: $a-color;
+		}
+	}
+	a {
+		color: $a-color;
+		text-decoration: none;
+		transition: .3s;
+		&:hover {
+			color: $a-hover-color;
+		}
+	}
+	.web {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		width: 100%;
+		font-size: 0;
+		li {
+			display: inline-block;
+			width: 24%;
+			margin:10px 0.5%;
+			box-shadow: 0 0 0 1px $web-color;
+			a {
+				position: relative;
+				display: block;
+				width: 100%;
+				background-color: $web-color;
+				text-align: center;
+				color: $p-color;
+				font-size: 16px;
+				&:hover {
+					img {
+						opacity: .8;
+					}
+				}
+			}
+			img {
+				width: 100%;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.content>div {
+	width: 80%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+$border-color: rgba(black, .3);
+
+.timeline {
+	padding-top: 15px;
+	box-shadow: 0 -4px 0 -3px #71dbb2;
+	clear: both;
+	.company {
+		margin: 10px 0 20px;
+		color: #FFF;
+		font-size: 26px;
+	}
+}
+.timeline-item {
+	padding: 2em;
+	position: relative;
+	color: rgba(black, .7);
+	border-left: 2px solid $border-color;
+	
+	p {
+		font-size: 1rem;
+		text-align: justify;
+	}
+	
+	&::before {
+		content: attr(date-is);
+		position: absolute;
+		left: 2em;
+		font-weight: bold;
+		top: 0;
+		display: block;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 700;
+		font-size: 1rem;
+		color: #FFF;
+	}
+
+	&::after {
+		width: 10px;
+		height: 10px;
+		display: block;
+		top: 0;
+		position: absolute;
+		left: -7px;
+		border-radius: 10px;
+		content: '';
+		border: 2px solid $border-color;
+		background: white;
+	}
+
+	&:last-child {
+		border-image: linear-gradient(
+			to bottom,
+			$border-color 60%,
+			rgba($border-color, 0)) 1 100%
+		;
+	}
+}
+
+@media screen and (max-width:992px){
+	.content {
+		.me_pic {
+			width: 100%;
+			margin: 2% 0;
+			height: auto;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.me_text {
+			width: 100%;
+			margin: 1% 0 14px;
+			li {
+				width: 100%;
+			}
+		}
+		.web {
+			li {
+				width: 32%;
+				margin:10px 0.5%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width:768px){
+	.content {
+		.web {
+			li {
+				width: 49%;
+				margin:10px 0.5%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width:540px){
+	.content {
+		.web {
+			li {
+				width: 100%;
+				margin:10px 0%;
+			}
+		}
+	}
+}
